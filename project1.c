@@ -13,7 +13,7 @@ void dispSeating();
 const char FULL = '*';
 const char EMPTY = '#';
 const int numCols = 30;
-const int Num_Rows = 15;
+const int numRows = 15;
 char chart[30][15];
 double price;
 int total = 0;
@@ -21,18 +21,18 @@ int seat = 450;
 int endIt = 1;
 
 int main() {
-	int price[Num_Rows];
+	int price[numRows];
 	int row2 = 0, column2, cost;
 	int answer;
 	printf("Theater Seating Program\n");
 
-	for (int count = 0; count < Num_Rows; count++)
+	for (int count = 0; count < numRows; count++)
 	{
 		printf("Enter the price by row number, row %d : ", (count + 1));
 		fflush(stdout);
 		scanf("%d", &price[count]);
 	}
-	for (int i = 0; i <= Num_Rows; i++)
+	for (int i = 0; i <= numRows; i++)
 	{
 		for (int j = 0; j <= numCols; j++)
 			chart[i][j] = '#';
@@ -43,7 +43,7 @@ int main() {
 		switch (choice) {
 		case 1:
 			printf("View Seat Prices\n\n");
-			for (int count = 0; count < Num_Rows; count++) {
+			for (int count = 0; count < numRows; count++) {
 				printf("The price for row %d : ", count + 1);
 				printf("%d\n", price[count]);
 			}
@@ -60,7 +60,7 @@ int main() {
 				printf("Enter the seat you would like to sit in: ");
 				fflush(stdout);
 				scanf("%d", &column2);
-				if (row2 > Num_Rows || column2 > numCols)
+				if (row2 > numRows || column2 > numCols)
 				{
 					printf("Input a valid seat.");
 				}
@@ -131,7 +131,7 @@ void dispSeating() {
 		printf("%d", i);
 	}
 	printf("\n");
-	for (int count = 1; count <= Num_Rows; ++count) {
+	for (int count = 1; count <= numRows; ++count) {
 		if (count < 10) {
 			printf("\n Row %d", count);
 		} else
